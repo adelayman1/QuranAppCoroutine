@@ -1,6 +1,6 @@
 
 
-![](https://github.com/adelayman1/QuranApp/blob/master/images/allAppImage.jpg)
+![](https://github.com/adelayman1/QuranApp./blob/master/images/allAppImage.jpg)
 
 # QuranApp
 This repository contains a quran app that implements mvvm architecture , clean architecture , navigation component , hilt , etc.... using kotlin language
@@ -12,11 +12,11 @@ This repository contains a quran app that implements mvvm architecture , clean a
 ## App Overview
 
 - this screen view all surahs in quran
-<img src="https://github.com/adelayman1/QuranApp/blob/master/images/image1.jpg" width="300" />
+<img src="https://github.com/adelayman1/QuranApp./blob/master/images/image1.jpg" width="300" />
 
 - this screen view surah the user selected it
-<img src="https://github.com/adelayman1/QuranApp/blob/master/images/image2.jpg" width="300" />
-<img src="https://github.com/adelayman1/QuranApp/blob/master/images/image3.jpg" width="300" />
+<img src="https://github.com/adelayman1/QuranApp./blob/master/images/image2.jpg" width="300" />
+<img src="https://github.com/adelayman1/QuranApp./blob/master/images/image3.jpg" width="300" />
 
 
 
@@ -26,7 +26,7 @@ This repository contains a quran app that implements mvvm architecture , clean a
 
 ## Project Structure
 
-![](https://github.com/adelayman1/QuranApp/blob/master/images/image.png)
+![](https://github.com/adelayman1/QuranApp./blob/master/images/image.png)
 
 
 ## Built With 🛠
