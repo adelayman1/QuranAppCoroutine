@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.adel.myquran.presentation.homeScreen.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_surahDetailsFragment"
+            app:destination="@id/surahDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/surahDetailsFragment"
+        android:name="com.adel.myquran.presentation.surahDetails.SurahDetailsFragment"
+        android:label="fragment_surah_details"
+        tools:layout="@layout/fragment_surah_details" >
+        <argument
+            android:name="surahNum"
+            app:argType="string" />
+    </fragment>
+</navigation>

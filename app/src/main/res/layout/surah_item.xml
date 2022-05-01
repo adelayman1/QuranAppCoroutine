@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="@dimen/_12sdp"
+    android:paddingBottom="@dimen/_17sdp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_surah_num"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_marginRight="@dimen/_5sdp"
+            android:background="@mipmap/islamic_star_foreground"
+            android:backgroundTint="#6a31bd"
+            android:fontFamily="@font/roboto"
+            android:gravity="center"
+            android:text="114"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_10ssp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvSurahName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto"
+                android:text="Surah name"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17ssp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvSurahType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="Meccan - "
+                    android:textColor="@color/hint"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSurahVerseNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="206 VERSES"
+                    android:textColor="@color/hint"
+                    android:textSize="@dimen/_13ssp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSurahArabicName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:fontFamily="@raw/islamic_arabic"
+        android:text="name"
+        android:textColor="#6a31bd"
+        android:textSize="@dimen/_19ssp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

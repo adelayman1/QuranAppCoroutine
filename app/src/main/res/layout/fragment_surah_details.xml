@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".presentation.surahDetails.SurahDetailsFragment">
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"/>
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollViewSurahDetails"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/_15sdp"
+        android:paddingTop="@dimen/_10sdp"
+        android:paddingRight="@dimen/_15sdp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:orientation="horizontal">
+            <ImageView
+                android:id="@+id/ivBack"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:src="@drawable/ic_baseline_keyboard_backspace_24"
+                android:tint="@color/black"
+                android:layout_marginRight="@dimen/_8sdp"/>
+            <TextView
+                android:id="@+id/tvSurahTitleName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@raw/extra_bold"
+                android:text="Quran App"
+                android:textColor="#6a31bd"
+                android:textSize="@dimen/_16ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </LinearLayout>
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_220sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            app:cardCornerRadius="@dimen/_15sdp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_gradient"
+                android:gravity="center_horizontal"
+                android:alpha=".9"
+                android:orientation="vertical"
+                android:paddingLeft="@dimen/_20sdp"
+                android:paddingTop="@dimen/_20sdp"
+                android:paddingRight="@dimen/_20sdp"
+                android:paddingBottom="@dimen/_17sdp">
+
+                <TextView
+                    android:id="@+id/tvSurahName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:letterSpacing=".06"
+                    android:text="Al-Fatihjb"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_25ssp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvSurahArabicName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="@dimen/_7sdp"
+                    android:fontFamily="@raw/islamic_arabic"
+                    android:text="الفاتحه"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_24ssp"
+                    android:textStyle="bold" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginLeft="@dimen/_20sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="@dimen/_20sdp"
+                    android:background="@android:drawable/divider_horizontal_dark"
+                    android:backgroundTint="@color/white" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/tvSurahType"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="Meccan - "
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvSurahVerseNum"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/roboto"
+                        android:text="206 VERSES"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_13ssp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="@dimen/_5sdp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/allah"
+                    android:tint="@color/white" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rc_verses"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/_10sdp"
+            tools:listitem="@layout/verse_item"/>
+    </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

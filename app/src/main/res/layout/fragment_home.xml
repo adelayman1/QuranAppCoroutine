@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".presentation.homeScreen.HomeFragment">
+
+    <ProgressBar
+        android:id="@+id/progress_loading"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollViewSurah"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingTop="@dimen/_10sdp"
+            android:paddingRight="@dimen/_15sdp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@raw/extra_bold"
+                    android:text="Quran App"
+                    android:textColor="#6a31bd"
+                    android:textSize="@dimen/_17ssp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <!--                <ImageView-->
+                <!--                    android:layout_width="@dimen/_22sdp"-->
+                <!--                    android:layout_height="@dimen/_22sdp"-->
+                <!--                    android:src="@drawable/ic_round_search_24"-->
+                <!--                    android:tint="@color/black"-->
+                <!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+                <!--                    app:layout_constraintRight_toRightOf="parent" />-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@raw/ropot_regular"
+                android:text="Asslamualakim"
+                android:textColor="@color/hint"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:fontFamily="@raw/extra_bold"
+                android:text="Read Quran Every Day"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16ssp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                app:cardCornerRadius="@dimen/_7sdp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/card_gradient"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_5sdp"
+                    android:paddingBottom="@dimen/_5sdp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/allah"
+                        android:tint="@color/white" />
+                </RelativeLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rc_all_surah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp"
+                tools:listitem="@layout/surah_item" />
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/lnError"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <TextView
+            android:id="@+id/tvError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:fontFamily="@raw/extra_bold"
+            android:gravity="center"
+            android:lineSpacingExtra="@dimen/_2sdp"
+            android:paddingLeft="@dimen/_15sdp"
+            android:paddingRight="@dimen/_15sdp"
+            android:text="there is an error check your connection and try again"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_17ssp" />
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:backgroundTint="@color/black"
+            android:text="try again"
+            app:cornerRadius="@dimen/_15sdp" />
+    </LinearLayout>
+</FrameLayout>
