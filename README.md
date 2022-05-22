@@ -37,7 +37,7 @@ This repository contains a **quran app** that implements Coroutines , mvvm archi
 ## Project Structure
 
 
-    quranapprxjavaversion      
+    myquran      
     ├── data                   
     │   ├── api              
     |   │   └── SurahApiService.kt                           
