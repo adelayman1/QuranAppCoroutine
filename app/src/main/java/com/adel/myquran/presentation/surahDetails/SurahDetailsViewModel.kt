@@ -24,8 +24,7 @@ class SurahDetailsViewModel @Inject constructor(
             MutableStateFlow(Result.Loading<List<VerseModel>>())
 
     init {
-
-
+            getSurahDetails()
     }
 
     fun getSurahDetails() {
@@ -38,13 +37,13 @@ class SurahDetailsViewModel @Inject constructor(
                 is Result.Success -> {
                     with(result.data) {
                         val surah = SurahModel(name, arabicName, verseNum, type)
-                        surahDetails.emit(com.adel.myquran.domain.entities.Result.Success(surah))
-                        verseList.emit(com.adel.myquran.domain.entities.Result.Success(verses))
+                        surahDetails.emit(Result.Success(surah))
+                        verseList.emit(Result.Success(verses))
                     }
                 }
 
                 is Result.Error -> {
-                    surahDetails.emit(Result.Error(result.error))
+                    verseList.emit(Result.Error(result.error))
 
                 }
             }
