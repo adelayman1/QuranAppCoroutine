@@ -1,4 +1,4 @@
-package com.example.myqurancore.data.models
+package com.adel.myquran.data.models
 
 import com.google.gson.annotations.SerializedName
 
@@ -9,7 +9,7 @@ data class VerseModel(
 )
 
 fun VerseModel.toVerseModel() =
-    com.example.myqurancore.domain.models.VerseModel(
+    com.adel.myquran.domain.models.VerseModel(
         audio = audio,
         verse = text,
         verseNumber = verseNumber

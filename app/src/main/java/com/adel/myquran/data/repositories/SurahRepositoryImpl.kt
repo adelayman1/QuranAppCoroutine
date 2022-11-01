@@ -1,11 +1,11 @@
-package com.example.myqurancore.data.repositories
+package com.adel.myquran.data.repositories
 
-import com.example.myqurancore.data.sources.remote.dataSource.SurahRemoteDataSource
-import com.example.myqurancore.data.sources.remote.responseModels.toSurahDetailsModel
-import com.example.myqurancore.data.sources.remote.responseModels.toSurahModel
-import com.example.myqurancore.domain.models.SurahDetailsModel
-import com.example.myqurancore.domain.models.SurahModel
-import com.example.myqurancore.domain.repositories.SurahRepository
+import com.adel.myquran.data.sources.remote.dataSource.SurahRemoteDataSource
+import com.adel.myquran.data.sources.remote.responseModels.toSurahDetailsModel
+import com.adel.myquran.data.sources.remote.responseModels.toSurahModel
+import com.adel.myquran.domain.models.SurahDetailsModel
+import com.adel.myquran.domain.models.SurahModel
+import com.adel.myquran.domain.repositories.SurahRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.async

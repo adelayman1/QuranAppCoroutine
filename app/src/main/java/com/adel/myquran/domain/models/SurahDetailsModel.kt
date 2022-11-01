@@ -1,4 +1,4 @@
-package com.example.myqurancore.domain.models
+package com.adel.myquran.domain.models
 
 
 data class SurahDetailsModel(

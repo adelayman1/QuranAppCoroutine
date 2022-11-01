@@ -1,8 +1,8 @@
-package com.example.myqurancore.data.sources.remote.responseModels
+package com.adel.myquran.data.sources.remote.responseModels
 
-import com.example.myqurancore.data.models.VerseModel
-import com.example.myqurancore.data.models.toVerseModel
-import com.example.myqurancore.domain.models.SurahDetailsModel
+import com.adel.myquran.data.models.VerseModel
+import com.adel.myquran.data.models.toVerseModel
+import com.adel.myquran.domain.models.SurahDetailsModel
 import com.google.gson.annotations.SerializedName
 
 data class SurahDetailsResponse(

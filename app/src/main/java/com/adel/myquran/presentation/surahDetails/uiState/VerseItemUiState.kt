@@ -1,4 +1,4 @@
-package com.example.myqurancore.presentation.surahDetails.uiState
+package com.adel.myquran.presentation.surahDetails.uiState
 
 data class VerseItemUiState(
     var verseAudio: String,

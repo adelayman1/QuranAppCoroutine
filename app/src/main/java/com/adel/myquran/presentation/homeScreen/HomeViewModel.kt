@@ -1,10 +1,10 @@
-package com.example.myqurancore.presentation.homeScreen
+package com.adel.myquran.presentation.homeScreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myqurancore.domain.usecases.GetAllSurahUseCase
-import com.example.myqurancore.presentation.homeScreen.uiStates.SurahItemUiState
-import com.example.myqurancore.presentation.homeScreen.uiStates.SurahUiState
+import com.adel.myquran.domain.usecases.GetAllSurahUseCase
+import com.adel.myquran.presentation.homeScreen.uiStates.SurahItemUiState
+import com.adel.myquran.presentation.homeScreen.uiStates.SurahUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

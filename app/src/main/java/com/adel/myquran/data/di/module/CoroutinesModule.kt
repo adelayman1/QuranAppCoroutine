@@ -1,4 +1,4 @@
-package com.example.myqurancore.data.di.module
+package com.adel.myquran.data.di.module
 
 import dagger.Module
 import dagger.Provides

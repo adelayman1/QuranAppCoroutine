@@ -1,4 +1,4 @@
-package com.example.myqurancore.presentation.homeScreen
+package com.adel.myquran.presentation.homeScreen
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -13,8 +13,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myqurancore.databinding.FragmentHomeBinding
-import com.example.myqurancore.presentation.homeScreen.uiStates.SurahItemUiState
+import com.adel.myquran.databinding.FragmentHomeBinding
+import com.adel.myquran.presentation.homeScreen.uiStates.SurahItemUiState
 import kotlinx.coroutines.launch
 
 class HomeFragment : Fragment() {

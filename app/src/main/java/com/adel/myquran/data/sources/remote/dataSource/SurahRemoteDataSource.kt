@@ -1,9 +1,9 @@
-package com.example.myqurancore.data.sources.remote.dataSource
+package com.adel.myquran.data.sources.remote.dataSource
 
-import com.example.myqurancore.data.sources.remote.endPoints.SurahApiService
-import com.example.myqurancore.data.sources.remote.responseModels.BaseApiResponse
-import com.example.myqurancore.data.sources.remote.responseModels.SurahDetailsResponse
-import com.example.myqurancore.data.sources.remote.responseModels.SurahModelResponse
+import com.adel.myquran.data.sources.remote.endPoints.SurahApiService
+import com.adel.myquran.data.sources.remote.responseModels.BaseApiResponse
+import com.adel.myquran.data.sources.remote.responseModels.SurahDetailsResponse
+import com.adel.myquran.data.sources.remote.responseModels.SurahModelResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

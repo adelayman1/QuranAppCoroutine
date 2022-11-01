@@ -1,10 +1,10 @@
-package com.example.myqurancore.presentation.homeScreen
+package com.adel.myquran.presentation.homeScreen
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myqurancore.databinding.SurahItemBinding
-import com.example.myqurancore.presentation.homeScreen.uiStates.SurahItemUiState
+import com.adel.myquran.databinding.SurahItemBinding
+import com.adel.myquran.presentation.homeScreen.uiStates.SurahItemUiState
 
 class SurahAdapter(
     private var surahList: List<SurahItemUiState>,

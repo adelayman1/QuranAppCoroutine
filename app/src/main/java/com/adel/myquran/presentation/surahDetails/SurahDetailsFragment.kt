@@ -1,4 +1,4 @@
-package com.example.myqurancore.presentation.surahDetails
+package com.adel.myquran.presentation.surahDetails
 
 import android.media.AudioAttributes
 import android.media.MediaPlayer
@@ -15,8 +15,8 @@ import androidx.lifecycle.repeatOnLifecycle
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.myqurancore.databinding.FragmentSurahDetailsBinding
-import com.example.myqurancore.presentation.surahDetails.uiState.VerseItemUiState
+import com.adel.myquran.databinding.FragmentSurahDetailsBinding
+import com.adel.myquran.presentation.surahDetails.uiState.VerseItemUiState
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 

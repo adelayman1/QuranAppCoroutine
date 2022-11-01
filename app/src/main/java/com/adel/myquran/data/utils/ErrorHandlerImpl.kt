@@ -1,6 +1,6 @@
-package com.example.myqurancore.data.utils
+package com.adel.myquran.data.utils
 
-import com.example.myqurancore.domain.utils.ErrorHandler
+import com.adel.myquran.domain.utils.ErrorHandler
 import retrofit2.HttpException
 import java.io.IOException
 import java.net.HttpURLConnection

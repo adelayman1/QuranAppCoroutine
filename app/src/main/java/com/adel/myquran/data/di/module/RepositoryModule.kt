@@ -1,9 +1,9 @@
-package com.example.myqurancore.data.di.module
+package com.adel.myquran.data.di.module
 
-import com.example.myqurancore.data.repositories.SurahRepositoryImpl
-import com.example.myqurancore.data.utils.ErrorHandlerImpl
-import com.example.myqurancore.domain.repositories.SurahRepository
-import com.example.myqurancore.domain.utils.ErrorHandler
+import com.adel.myquran.data.repositories.SurahRepositoryImpl
+import com.adel.myquran.data.utils.ErrorHandlerImpl
+import com.adel.myquran.domain.repositories.SurahRepository
+import com.adel.myquran.domain.utils.ErrorHandler
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

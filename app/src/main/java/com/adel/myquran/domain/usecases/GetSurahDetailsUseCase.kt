@@ -1,8 +1,8 @@
-package com.example.myqurancore.domain.usecases
+package com.adel.myquran.domain.usecases
 
-import com.example.myqurancore.data.repositories.SurahRepositoryImpl
-import com.example.myqurancore.data.utils.ErrorHandlerImpl
-import com.example.myqurancore.domain.models.SurahDetailsModel
+import com.adel.myquran.data.repositories.SurahRepositoryImpl
+import com.adel.myquran.data.utils.ErrorHandlerImpl
+import com.adel.myquran.domain.models.SurahDetailsModel
 import javax.inject.Inject
 
 

@@ -1,6 +1,6 @@
 package com.adel.myquran.data.di.module
 
-import com.example.myqurancore.data.sources.remote.endPoints.SurahApiService
+import com.adel.myquran.data.sources.remote.endPoints.SurahApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

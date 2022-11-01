@@ -1,8 +1,8 @@
-package com.example.myqurancore.domain.usecases
+package com.adel.myquran.domain.usecases
 
-import com.example.myqurancore.domain.models.SurahModel
-import com.example.myqurancore.domain.repositories.SurahRepository
-import com.example.myqurancore.domain.utils.ErrorHandler
+import com.adel.myquran.domain.models.SurahModel
+import com.adel.myquran.domain.repositories.SurahRepository
+import com.adel.myquran.domain.utils.ErrorHandler
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.withContext
 import javax.inject.Inject

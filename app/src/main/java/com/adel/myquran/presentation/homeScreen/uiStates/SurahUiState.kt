@@ -1,4 +1,4 @@
-package com.example.myqurancore.presentation.homeScreen.uiStates
+package com.adel.myquran.presentation.homeScreen.uiStates
 
 
 data class SurahUiState(

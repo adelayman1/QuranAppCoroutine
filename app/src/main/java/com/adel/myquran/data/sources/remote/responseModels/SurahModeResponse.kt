@@ -1,4 +1,4 @@
-package com.example.myqurancore.data.sources.remote.responseModels
+package com.adel.myquran.data.sources.remote.responseModels
 
 import com.google.gson.annotations.SerializedName
 
@@ -10,4 +10,4 @@ data class SurahModelResponse(
 )
 
 fun SurahModelResponse.toSurahModel() =
-    com.example.myqurancore.domain.models.SurahModel(name, arabicName, verseNum, type)
+    com.adel.myquran.domain.models.SurahModel(name, arabicName, verseNum, type)

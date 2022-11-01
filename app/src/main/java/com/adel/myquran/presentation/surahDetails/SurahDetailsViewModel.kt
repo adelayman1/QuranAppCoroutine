@@ -1,12 +1,12 @@
-package com.example.myqurancore.presentation.surahDetails
+package com.adel.myquran.presentation.surahDetails
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.myqurancore.domain.usecases.GetSurahDetailsUseCase
-import com.example.myqurancore.presentation.surahDetails.uiState.SurahDetailsUiState
-import com.example.myqurancore.presentation.surahDetails.uiState.SurahInfoUiState
-import com.example.myqurancore.presentation.surahDetails.uiState.VerseItemUiState
+import com.adel.myquran.domain.usecases.GetSurahDetailsUseCase
+import com.adel.myquran.presentation.surahDetails.uiState.SurahDetailsUiState
+import com.adel.myquran.presentation.surahDetails.uiState.SurahInfoUiState
+import com.adel.myquran.presentation.surahDetails.uiState.VerseItemUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow

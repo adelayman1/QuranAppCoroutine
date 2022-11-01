@@ -1,8 +1,8 @@
-package com.example.myqurancore.data.sources.remote.endPoints
+package com.adel.myquran.data.sources.remote.endPoints
 
-import com.example.myqurancore.data.sources.remote.responseModels.BaseApiResponse
-import com.example.myqurancore.data.sources.remote.responseModels.SurahDetailsResponse
-import com.example.myqurancore.data.sources.remote.responseModels.SurahModelResponse
+import com.adel.myquran.data.sources.remote.responseModels.BaseApiResponse
+import com.adel.myquran.data.sources.remote.responseModels.SurahDetailsResponse
+import com.adel.myquran.data.sources.remote.responseModels.SurahModelResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 

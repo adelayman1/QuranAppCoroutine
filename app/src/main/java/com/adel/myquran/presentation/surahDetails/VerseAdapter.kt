@@ -1,10 +1,10 @@
-package com.example.myqurancore.presentation.surahDetails
+package com.adel.myquran.presentation.surahDetails
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.myqurancore.databinding.VerseItemBinding
-import com.example.myqurancore.presentation.surahDetails.uiState.VerseItemUiState
+import com.adel.myquran.databinding.VerseItemBinding
+import com.adel.myquran.presentation.surahDetails.uiState.VerseItemUiState
 
 class VerseAdapter(
     private var verseList: List<VerseItemUiState>,
