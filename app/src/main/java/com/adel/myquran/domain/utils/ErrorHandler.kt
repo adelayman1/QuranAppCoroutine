@@ -1,7 +1,5 @@
-package com.adel.myquran.domain.utils
-
-import com.adel.myquran.domain.entities.ErrorEntity
+package com.example.myqurancore.domain.utils
 
 interface ErrorHandler {
-    fun getError(throwable: Throwable): ErrorEntity
+    fun getError(exception: Exception): Exception
 }

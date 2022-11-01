@@ -1,52 +1,75 @@
-package com.adel.myquran.presentation.surahDetails
+package com.example.myqurancore.presentation.surahDetails
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.adel.myquran.data.models.SurahModel
-import com.adel.myquran.data.models.VerseModel
-import com.adel.myquran.domain.entities.Result
-import com.adel.myquran.domain.usecases.GetSurahDetailsUseCase
+import com.example.myqurancore.domain.usecases.GetSurahDetailsUseCase
+import com.example.myqurancore.presentation.surahDetails.uiState.SurahDetailsUiState
+import com.example.myqurancore.presentation.surahDetails.uiState.SurahInfoUiState
+import com.example.myqurancore.presentation.surahDetails.uiState.VerseItemUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class SurahDetailsViewModel @Inject constructor(
-        var useCase: GetSurahDetailsUseCase,
-        var savedStateHandle: SavedStateHandle
+    var getSurahDetailsUseCase: GetSurahDetailsUseCase, var savedStateHandle: SavedStateHandle
 ) : ViewModel() {
-    var surahDetails: MutableStateFlow<Result<SurahModel>> =
-            MutableStateFlow(Result.Loading<SurahModel>())
-    var verseList: MutableStateFlow<Result<List<VerseModel>>> =
-            MutableStateFlow(Result.Loading<List<VerseModel>>())
+    private var _surahUiState = MutableStateFlow(SurahDetailsUiState())
+    var surahUiState = _surahUiState.asStateFlow()
 
     init {
-            getSurahDetails()
+        getSurahDetails()
     }
 
     fun getSurahDetails() {
         val surahNum = savedStateHandle["surahNum"] ?: 1
+        _surahUiState.update { currentUiState ->
+            currentUiState.copy(
+                isLoading = true, surahInfo = null, verses = null
+            )
+        }
         viewModelScope.launch(Dispatchers.IO) {
-            surahDetails.emit(Result.Loading())
-            verseList.emit(Result.Loading())
-            var result = useCase.invoke(surahNum)
-            when (result) {
-                is Result.Success -> {
-                    with(result.data) {
-                        val surah = SurahModel(name, arabicName, verseNum, type)
-                        surahDetails.emit(Result.Success(surah))
-                        verseList.emit(Result.Success(verses))
+            try {
+                getSurahDetailsUseCase.invoke(surahNum).apply {
+                    val versesListUiItems = surahVerses!!.map { verse ->
+                        VerseItemUiState(
+                            verseAudio = verse?.audio ?: "",
+                            verseNumber = verse?.verseNumber ?: 0,
+                            verseText = verse?.verse ?: ""
+                        )
+                    }
+                    _surahUiState.update { currentUiState ->
+                        currentUiState.copy(
+                            isLoading = false, surahInfo = SurahInfoUiState(
+                                surahEnglishName ?: "",
+                                surahArabicName ?: "",
+                                surahVersesNumber ?: 0,
+                                surahType == "Meccan",
+                            ), verses = versesListUiItems
+                        )
                     }
                 }
-
-                is Result.Error -> {
-                    verseList.emit(Result.Error(result.error))
-
+            } catch (e: Exception) {
+                _surahUiState.update { currentUiState ->
+                    currentUiState.copy(
+                        isLoading = false,
+                        surahInfo = null,
+                        verses = null,
+                        errorMessage = e.message.toString()
+                    )
                 }
             }
+        }
+    }
+
+    fun errorMessageShown() {
+        _surahUiState.update { currentUiState ->
+            currentUiState.copy(errorMessage = null)
         }
     }
 }

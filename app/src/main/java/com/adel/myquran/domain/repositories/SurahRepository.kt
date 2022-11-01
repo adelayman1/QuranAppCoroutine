@@ -1,11 +1,9 @@
-package com.adel.myquran.domain.repositories
+package com.example.myqurancore.domain.repositories
 
-import com.adel.myquran.data.models.ApiResponse
-import com.adel.myquran.data.models.SurahDetailsModel
-import com.adel.myquran.data.models.SurahModel
-import kotlinx.coroutines.flow.Flow
+import com.example.myqurancore.domain.models.SurahDetailsModel
+import com.example.myqurancore.domain.models.SurahModel
 
 interface SurahRepository {
-    suspend fun getAllSurah(): ApiResponse<List<SurahModel>>
-    suspend fun getSurahDetails(surahNum: Int): ApiResponse<SurahDetailsModel>
+    suspend fun getAllSurah(refresh: Boolean = false): List<SurahModel>
+    suspend fun getSurahDetails(surahNum: Int): SurahDetailsModel
 }

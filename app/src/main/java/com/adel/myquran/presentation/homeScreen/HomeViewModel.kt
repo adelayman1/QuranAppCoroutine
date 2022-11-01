@@ -1,51 +1,66 @@
-package com.adel.myquran.presentation.homeScreen
+package com.example.myqurancore.presentation.homeScreen
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.adel.myquran.data.models.SurahModel
-import com.adel.myquran.domain.entities.Result
-import com.adel.myquran.domain.usecases.GetAllSurahUseCase
+import com.example.myqurancore.domain.usecases.GetAllSurahUseCase
+import com.example.myqurancore.presentation.homeScreen.uiStates.SurahItemUiState
+import com.example.myqurancore.presentation.homeScreen.uiStates.SurahUiState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-        private val useCase: GetAllSurahUseCase
+    private val getAllSurahUseCase: GetAllSurahUseCase
 ) : ViewModel() {
-    var surahList: MutableStateFlow<Result<List<SurahModel>>> =
-            MutableStateFlow(Result.Loading<List<SurahModel>>());
+    private var _surahUiState = MutableStateFlow(SurahUiState())
+    var surahUiState: StateFlow<SurahUiState> = _surahUiState.asStateFlow()
 
     init {
-        loadData()
+        refreshSurah(false)
     }
 
-    fun loadData() {
+    fun refreshSurah(refresh: Boolean) {
+        _surahUiState.update { currentUiState ->
+            currentUiState.copy(
+                isLoading = true,
+                surah = null
+            )
+        }
         viewModelScope.launch(Dispatchers.IO) {
-            surahList.emit(Result.Loading())
-            var result = useCase.invoke()
-            when (result) {
-                is Result.Success -> {
-                    surahList.emit(Result.Success(result.data))
+            try {
+                val allSurahResult = getAllSurahUseCase.invoke()
+                val surahListUiItems = allSurahResult.map { surah ->
+                    SurahItemUiState(
+                        surahEnglishName = surah.englishName ?: "",
+                        surahArabicName = surah.arabicName ?: "",
+                        surahType = surah.type ?: "",
+                        versesNumInSurah = surah.verseNum ?: 0
+                    )
                 }
-                is Result.Error -> {
-                    surahList.emit(Result.Error(result.error))
+                _surahUiState.update { currentUiState ->
+                    currentUiState.copy(isLoading = false, surah = surahListUiItems)
+                }
+            } catch (e: Exception) {
+                _surahUiState.update { currentUiState ->
+                    currentUiState.copy(
+                        isLoading = false,
+                        surah = null,
+                        errorMessage = e.message.toString()
+                    )
                 }
             }
         }
     }
-}
 
-//try {
-//
-//    repositoryImpl.getAllSurah().collect { response ->
-//        if (response.code == 200) //on success
-//            surahList.emit(Recourse.success<List<SurahModel>>(response.data))
-//        else //on error
-//            surahList.emit(Recourse.error<List<SurahModel>>(response.status + " code:" + response.code))
-//    }
-//} catch (e: Throwable) {
-//    surahList.emit(Recourse.error<List<SurahModel>>(e.message ?: "unknown error"))
-//}
+    fun errorMessageShown() {
+        _surahUiState.update { currentUiState ->
+            currentUiState.copy(errorMessage = null)
+        }
+    }
+}

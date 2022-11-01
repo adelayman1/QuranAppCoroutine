@@ -1,26 +1,29 @@
-package com.adel.myquran.presentation.surahDetails
+package com.example.myqurancore.presentation.surahDetails
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.adel.myquran.data.models.VerseModel
-import com.adel.myquran.databinding.VerseItemBinding
+import com.example.myqurancore.databinding.VerseItemBinding
+import com.example.myqurancore.presentation.surahDetails.uiState.VerseItemUiState
 
-class VerseAdapter(private var verseList: List<VerseModel>, private val onClickPlay : (String) -> Unit) :
+class VerseAdapter(
+    private var verseList: List<VerseItemUiState>,
+    private val onClickPlay: (String) -> Unit
+) :
     RecyclerView.Adapter<VerseAdapter.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerseAdapter.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding: VerseItemBinding =
             VerseItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ViewHolder(binding)
     }
 
-    override fun onBindViewHolder(holder: VerseAdapter.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         with(holder) {
             verseList[position].let { item ->
-                binding.tvVerse.text = item.text
+                binding.tvVerse.text = item.verseText
                 binding.verseNum.text = item.verseNumber.toString()
-                binding.ivPlayAudio.setOnClickListener{ onClickPlay(item.audio)}
+                binding.ivPlayAudio.setOnClickListener { onClickPlay(item.verseAudio) }
             }
         }
     }
