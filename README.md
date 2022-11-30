@@ -38,34 +38,43 @@ This repository contains a **quran app** that implements Coroutines , mvvm archi
 
 
     myquran      
-    ├── data                   
-    │   ├── api              
-    |   │   └── SurahApiService.kt                           
-    |   |   
+    ├── data       
     │   ├── di                  
     |   │   └── module        
-    |   |       ├──NetworkModule.kt         
+    |   |       ├──RepositoryModule.kt
+    |   |       ├──NetworkModule.kt
+    |   |       ├──CoroutinesModule.kt
     |   |       └──SurahApiModule.kt
     |   |
     │   ├── repositories         
     |   |   └──SurahRepositoryImpl.kt
     |   |
     |   |
-    |   ├── models             
-    |   |   ├──ApiResponse.kt   
-    |   |   ├──SurahDetailsModel.kt 
-    |   |   ├──SurahModel.kt 
+    |   ├── models          
     |   |   └──VerseModel.kt 
     |   |
     |   |
+    |   ├── sources    
+    |   │   └── remote
+    |   |       ├──dataSource
+    |   |       |    └──SurahRemoteDataSource.kt
+    |   |       ├──endPoints
+    |   |       |    └──SurahApiService.kt
+    |   |       └──responseModels
+    |   |           ├──BaseApiResponse.kt
+    |   |           ├──SurahDetailsResponse.kt
+    |   |           └──SurahModeResponse.kt
+    |   | 
+    |   |
     |   |── utils
     |   |   └──ErrorHandlerImpl.kt 
-    |
-    |       
+    |   |
+    |   |    
     |── domain 
-    |   ├──enities
-    |   |   ├──ErrorEnity.kt
-    |   |   └──Result.kt
+    |   ├──models
+    |   |   ├──SurahDetailsModel.kt
+    |   |   ├──SurahModel.kt
+    |   |   └──VerseModel.kt
     |   |
     |   |──repositories
     |   |  └──SurahRepository.kt
@@ -80,18 +89,25 @@ This repository contains a **quran app** that implements Coroutines , mvvm archi
     |
     ├── presentation                      
     │   ├── homeScreen
+    |   |   ├──uiStates
+    |   |   |   ├──SurahItemUiState.kt
+    |   |   |   └──SurahUiState.kt
     |   |   ├──HomeFragment.kt
     |   |   ├──HomeViewModel.kt
     |   |   └──SurahAdapter.kt
     |   |
     │   ├── surahDetailsScreen
+    |   |   ├──uiState
+    |   |   |   ├──SurahDetailsUiState.kt
+    |   |   |   ├──SurahInfoUiState.kt
+    |   |   |   └──VerseItemUiState.kt
     |   |   ├──SurahDetailsFragment.kt
     |   |   ├──SurahDetailViewModel.kt
     |   |   └──VerseAdapter.kt
     |
     |
     ├──MainActivity.kt
-    └── Application.kt
+    └──Application.kt
     
        
 ## LICENSE
